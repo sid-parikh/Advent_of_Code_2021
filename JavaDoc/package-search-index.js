@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.sidparikh.advent"},{"l":"com.sidparikh.advent.solutions"}];updateSearchResults();
