@@ -3,8 +3,6 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
-import java.io.FileNotFoundException;
-import java.util.List;
 
 /**
  * Day 1: Sonar Sweep <br> <br>
@@ -18,13 +16,14 @@ import java.util.List;
 
 public class Day01 extends Solution {
 
-    public Day01() throws FileNotFoundException {
+    public Day01() {
         super(1);
     }
 
     /**
      * Counts the number of times a depth measurement represents an increase from the previous one.
      */
+    @Override
     public String partOne() {
         int res = 0;
         // Loop through, convert to ints, and compare.
@@ -40,6 +39,7 @@ public class Day01 extends Solution {
     /**
      * Counts the number of times a sum of three consecutive measurements represents an increase from the previous sum.
      */
+    @Override
     public String partTwo() {
         // This time just convert to ints first to make our life easier
         int[] nums = input.stream().mapToInt(Integer::parseInt).toArray();
