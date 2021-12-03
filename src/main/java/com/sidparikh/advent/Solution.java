@@ -1,7 +1,5 @@
 package com.sidparikh.advent;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -65,7 +63,7 @@ public abstract class Solution {
 
         // Run and time part two
         start = System.currentTimeMillis();
-        String resTwo = partOne();
+        String resTwo = partTwo();
         elapsed = System.currentTimeMillis() - start;
         resTwo += String.format(" (%d ms)", elapsed);
 
