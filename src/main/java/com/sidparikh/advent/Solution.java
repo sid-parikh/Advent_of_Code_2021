@@ -4,11 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public abstract class Solution {
 
-    private static final String INPUTS_LOCATION = "C:\\Users\\sidparikh\\Documents\\Advent of Code\\Advent of Code 2021\\src\\com\\sidparikh\\advent\\inputs\\";
 
     private final int DAY;
     protected final List<String> input;
@@ -21,9 +21,9 @@ public abstract class Solution {
     /**
      * Gets the input from the file's location on my PC.
      */
-    private List<String> getInput() throws FileNotFoundException {
-        String path = INPUTS_LOCATION + "day" + String.format("%02d", DAY) + ".txt";
-        Scanner scanner = new Scanner(new File(path));
+    private List<String> getInput() {
+        String filepath = "inputs/day" + String.format("%02d", DAY) + ".txt";
+        Scanner scanner = new Scanner(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filepath)));
 
         List<String> input = new ArrayList<>();
 
