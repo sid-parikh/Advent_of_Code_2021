@@ -65,7 +65,7 @@ public abstract class Solution {
 
         // Run and time part two
         start = System.currentTimeMillis();
-        String resTwo = partOne();
+        String resTwo = partTwo();
         elapsed = System.currentTimeMillis() - start;
         resTwo += String.format(" (%d ms)", elapsed);
 
