@@ -16,7 +16,7 @@ public abstract class Solution {
     private final int DAY;
     protected final List<String> input;
 
-    protected Solution(int day) {
+    public Solution(int day) {
         this.DAY = day;
         try {
             input = getInput();
