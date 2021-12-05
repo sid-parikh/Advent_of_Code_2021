@@ -1,3 +1,4 @@
+/* Sid Parikh. Created on December 4, , for Advent of Code */
 package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
@@ -118,7 +119,7 @@ public class Day04 extends Solution {
         i = 0;
         j = 4;
         while (i < 5 && board[i][j] == MARK) i++;
-        if (i == 5) return true;
+        return i == 5;
 //        // Diagonal 1
 //        i = 0;
 //        j = 0;
@@ -129,15 +130,13 @@ public class Day04 extends Solution {
 //        j = 4;
 //        while (i < 5 && board[i][j] == MARK) {i++; j--;}
 //        if (i == 5) return true;
-
-        return false;
     }
 
     @Override
     public String partTwo() {
 
         int[] nums = Arrays.stream(input.remove(0).split(",")).filter((s) -> !s.isEmpty()).mapToInt(Integer::parseInt).toArray();
-        ArrayList<int[][]> boards = new ArrayList<int[][]>();
+        ArrayList<int[][]> boards = new ArrayList<>();
         int i = -1;
         int j = 0;
         for (String s : input) {

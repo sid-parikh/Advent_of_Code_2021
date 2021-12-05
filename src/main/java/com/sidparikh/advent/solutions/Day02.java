@@ -1,14 +1,14 @@
-/* Sid Parikh. Created on December 2, 2021 for Advent of Code */
+/* Sid Parikh. Created on December 2, 2021, for Advent of Code */
 package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
 /**
- * Day 2: Dive! <br> <br>
- *
+ * Day 2: Dive!
+ * <p>
  * We're trying to pilot the submarine. <br>
- * Star One: Take the directions and find the final depth and position. Return their product<br>
- * Star Two: Up and down don't actually move us, just change our aim. <br> <br>
+ * Star One: Take the directions and find the final depth and position. Return their product. <br>
+ * Star Two: Up and down don't actually move us, just change our aim.
  */
 public class Day02 extends Solution {
 
@@ -18,7 +18,8 @@ public class Day02 extends Solution {
 
     /**
      * Calculates the final position using the given instructions. Up is down and down is up.
-     * @return the product of the final horizontal position and final depth
+     *
+     * @return the product of the final horizontal position and final depth (1714950)
      */
     @Override
     public String partOne() {
@@ -41,7 +42,8 @@ public class Day02 extends Solution {
     /**
      * Calculates the final position using the new formula: up and down change the aim, and forward x moves forward x
      * and increases depth by x * aim.
-     * @return the product of the final horizontal position and final depth
+     *
+     * @return the product of the final horizontal position and final depth (1281977850)
      */
     @Override
     public String partTwo() {
