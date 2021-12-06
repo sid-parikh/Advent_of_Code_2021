@@ -7,81 +7,85 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Day 6: Lanternfish
+ * <p>
+ * We need to model the exponentially growing school of lanternfish. <br>
+ * Star One: Calculate the number of fish after 80 days. <br>
+ * Star Two: Calculate the number of fish after 256 days.
+ */
 public class Day06 extends Solution {
     public Day06() {
         super(6);
     }
 
-    @Override
-    public String partOne() {
-        ArrayList<Integer> fish = new ArrayList<>((Arrays.stream(input.get(0).split(",")).mapToInt(Integer::parseInt).boxed().toList()));
+    /**
+     * Simulates a single day, given an array of longs where the index is the value (days remaining in cycle) of a fish
+     * and the value is the number of fish with that value.
+     * @param fishArray array where index represents days left and value represents number of fish
+     * @return a new array representing the state of fish at the end of the day
+     */
+    private static long[] simulateDay(long[] fishArray) {
+        long[] newFishies = new long[9];
 
-        for (int i = 0; i < 80; i++) {
-            simulateDay(fish);
-        }
+        // Decrease indices by one by copying to a new array and shifting positions by one.
+        System.arraycopy(fishArray, 1, newFishies, 0, 8);
 
-        return String.valueOf(fish.size());
+        // Fish with a starting value of 0 were not included above, and have special behavior
+        // These fish reset to 6 but also create an equal number of fish with an initial value of 8.
+        newFishies[6] += fishArray[0];
+        newFishies[8] += fishArray[0];
+
+        // Return the new array.
+        return newFishies;
     }
 
-    private static void simulateDay(List<Integer> fishList) {
-        for (int i = 0; i < fishList.size(); i++) {
-            int f = fishList.get(i);
-            if (f == 0) {
-                fishList.add(9);
-                fishList.set(i, 6);
-            } else {
-                fishList.set(i, f - 1);
-            }
-
-        }
-    }
-
-    @Override
-    public String partTwo() {
-        // It seems doing it manually does not work. Java ran out of heap space or something.
-        // I don't even know what that means other than BAD.
-
-//        ArrayList<Integer> fish = new ArrayList<Integer>((Arrays.stream(input.get(0).split(",")).mapToInt(Integer::parseInt).boxed().toList()));
-//
-//        for (int i = 0; i < 256; i++) {
-//            simulateDay(fish);
-//        }
-//
-//        return String.valueOf(fish.size());
-
-        // The trick is that fish with the same value are the same, so just keep a count of the number of fish which each value.
-        // Haha, now my part 2 runs in 5% of the time that my part one does. I'll update that one in the morning
+    /**
+     * Parses the input (a list of values representing fish) and calls {@link #simulateDay(long[])} repeatedly.
+     * @param numDays the number of days to simulate
+     * @return the total number of fish at the end of {@code numDays} days.
+     */
+    private String simulateManyDays(int numDays) {
+        // Setup: Convert to int[]
         int[] inputFish = Arrays.stream(input.get(0).split(",")).mapToInt(Integer::parseInt).toArray();
         long[] fishies = new long[9];
 
+        // Index represents day in cycle (given) and value represents count (count how many; increment)
         for (int n : inputFish) {
             fishies[n]++;
         }
 
-        for (long n : fishies) {
-            System.out.println(n);
+        // Simulate numDays days
+        for (int n = 0; n < numDays; n++) {
+            fishies = simulateDay(fishies);
         }
 
-        for (int i = 0; i < 256; i++) {
-            long[] newFishies = new long[9];
-            newFishies[6] = fishies[0];
-            newFishies[8] = fishies[0];
-            newFishies[0] = fishies[1];
-            newFishies[1] = fishies[2];
-            newFishies[2] = fishies[3];
-            newFishies[3] = fishies[4];
-            newFishies[4] = fishies[5];
-            newFishies[5] = fishies[6];
-            newFishies[6] += fishies[7];
-            newFishies[7] = fishies[8];
-            fishies = newFishies;
-        }
-
+        // Sum the number of fish
         long total = 0;
         for (int i = 0; i <= 8; i++) {
             total += fishies[i];
         }
 
         return String.valueOf(total);
+    }
+
+    /**
+     * Simulates 80 days
+     * @return the number of fish after 80 days (360610)
+     */
+    @Override
+    public String partOne() {
+        return simulateManyDays(80);
+    }
+
+    /**
+     * Simulates 256 days
+     * @return the number of fish after 256 days (1631629590423)
+     */
+    @Override
+    public String partTwo() {
+        // For some odd reason, part two always takes way less time than part one.
+        // Maybe some kind of strange compiler optimization?
+        return simulateManyDays(256);
     }
 }
