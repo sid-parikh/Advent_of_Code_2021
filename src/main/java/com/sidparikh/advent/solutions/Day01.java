@@ -1,16 +1,16 @@
-/* Sid Parikh. Created December 1, 2021 for Advent of Code */
+/* Sid Parikh. Created December 1, 2021, for Advent of Code */
 package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
 
 /**
- * Day 1: Sonar Sweep <br> <br>
- *
+ * Day 1: Sonar Sweep
+ * <p>
  * We're getting some depth measurements from the sonar on our ship. <br>
  * Star One: Find out how the depth is changing (how often it increases). <br>
- * Star Two: To eliminate some noise in the data, use a the sum of a sliding three-measurement window instead. <br> <br>
- *
+ * Star Two: To eliminate some noise in the data, use a the sum of a sliding three-measurement window instead.
+ * <p>
  * It's a new year! This one wasn't too hard, but it took some time to get back in the groove.
  */
 
@@ -22,6 +22,8 @@ public class Day01 extends Solution {
 
     /**
      * Counts the number of times a depth measurement represents an increase from the previous one.
+     *
+     * @return aforementioned count (1548)
      */
     @Override
     public String partOne() {
@@ -38,6 +40,8 @@ public class Day01 extends Solution {
 
     /**
      * Counts the number of times a sum of three consecutive measurements represents an increase from the previous sum.
+     *
+     * @return aforementioned count (1589)
      */
     @Override
     public String partTwo() {

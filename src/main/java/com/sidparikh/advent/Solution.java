@@ -14,14 +14,13 @@ public abstract class Solution {
     private final int DAY;
     protected final List<String> input;
 
-    protected Solution(int day) {
+    public Solution(int day) {
         this.DAY = day;
         try {
             input = getInput();
         } catch (NullPointerException e) {
-            // An expensive way to add an error message, but this should really never happen,
-            // and it's a puzzle, RAM isn't really a concern.
-            System.err.println("Input File not Found!\n\n");
+            // An expensive way to add an error message, but this should really never happen.
+            System.err.println("Input File not Found!");
             throw e;
         }
     }
