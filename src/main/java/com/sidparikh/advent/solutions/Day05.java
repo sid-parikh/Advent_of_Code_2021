@@ -3,11 +3,22 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+/**
+ * Day 5: Hydrothermal Venture
+ * <p>
+ * We need to avoid the chains of Hydrothermal vents. Let's find areas where more than one chain overlaps. <br>
+ * Star One: Only check horizontal and vertical lines. <br>
+ * Star Two: Include diagonal lines, too.
+ */
 public class Day05 extends Solution {
     public Day05() {
         super(5);
     }
 
+    /**
+     * Counts the number of overlaps of horizontal and vertical lines.
+     * @return the number of grid squares that two or more lines go through (7468)
+     */
     @Override
     public String partOne() {
         // Coordinate plane Q1; integers only.
@@ -45,6 +56,10 @@ public class Day05 extends Solution {
         return String.valueOf(result);
     }
 
+    /**
+     * Counts the number of overlaps of all lines.
+     * @return the number of grid squares that two or more lines go through (22364)
+     */
     @Override
     public String partTwo() {
         int[][] grid = new int[1000][1000];

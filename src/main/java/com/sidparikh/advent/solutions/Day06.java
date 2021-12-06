@@ -61,10 +61,7 @@ public class Day06 extends Solution {
         }
 
         // Sum the number of fish
-        long total = 0;
-        for (int i = 0; i <= 8; i++) {
-            total += fishies[i];
-        }
+        long total = Arrays.stream(fishies).sum();
 
         return String.valueOf(total);
     }
