@@ -1,4 +1,4 @@
-/* Sid Parikh. Created on December 4, , for Advent of Code */
+/* Sid Parikh. Created on December 4, 2021, for Advent of Code */
 package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
@@ -6,57 +6,13 @@ import com.sidparikh.advent.Solution;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
 public class Day04 extends Solution {
 
     private static final int MARK = -1;
 
-
     public Day04() {
         super(4);
-    }
-
-    @Override
-    public String partOne() {
-//        final List<String> input = List.copyOf(input);
-//        int[] nums = Arrays.stream(input.remove(0).split(",")).filter((s) -> !s.isEmpty()).mapToInt(Integer::parseInt).toArray();
-//        ArrayList<int[][]> boards = new ArrayList<int[][]>();
-//        int i = -1;
-//        int j = 0;
-//        for (String s : input) {
-//            if (s.isEmpty()) {
-//                j = 0;
-//                i++;
-//                boards.add(new int[5][5]);
-//            } else {
-//                boards.get(i)[j] = Arrays.stream(s.split(" ")).filter((a) -> !a.isEmpty()).mapToInt(Integer::parseInt).toArray();
-//                j++;
-//            }
-//        }
-//
-//        for (int n : nums) {
-//
-//            for (int[][] board : boards) {
-//
-//                for (i = 0; i < 5; i++) {
-//                    for (j = 0; j < 5; j++) {
-//                        if (board[i][j] == n) {
-//                            board[i][j] = MARK;
-//                        }
-//                    }
-//                }
-//
-//                if (isBoardWinner(board)) {
-//                    return String.valueOf(getFinalScore(board, n));
-//                }
-//
-//            }
-//
-//        }
-
-
-        return null;
     }
 
     public static int getFinalScore(int[][] board, int lastNum) {
@@ -120,16 +76,49 @@ public class Day04 extends Solution {
         j = 4;
         while (i < 5 && board[i][j] == MARK) i++;
         return i == 5;
-//        // Diagonal 1
-//        i = 0;
-//        j = 0;
-//        while (i < 5 && board[i][j] == MARK) {i++; j++;}
-//        if (i == 5) return true;
-//        // Diagonal 2
-//        i = 0;
-//        j = 4;
-//        while (i < 5 && board[i][j] == MARK) {i++; j--;}
-//        if (i == 5) return true;
+    }
+
+    @Override
+    public String partOne() {
+//        final Lis
+//        t<String> input = List.copyOf(input);
+//        int[] nums = Arrays.stream(input.remove(0).split(",")).filter((s) -> !s.isEmpty()).mapToInt(Integer::parseInt).toArray();
+//        ArrayList<int[][]> boards = new ArrayList<int[][]>();
+//        int i = -1;
+//        int j = 0;
+//        for (String s : input) {
+//            if (s.isEmpty()) {
+//                j = 0;
+//                i++;
+//                boards.add(new int[5][5]);
+//            } else {
+//                boards.get(i)[j] = Arrays.stream(s.split(" ")).filter((a) -> !a.isEmpty()).mapToInt(Integer::parseInt).toArray();
+//                j++;
+//            }
+//        }
+//
+//        for (int n : nums) {
+//
+//            for (int[][] board : boards) {
+//
+//                for (i = 0; i < 5; i++) {
+//                    for (j = 0; j < 5; j++) {
+//                        if (board[i][j] == n) {
+//                            board[i][j] = MARK;
+//                        }
+//                    }
+//                }
+//
+//                if (isBoardWinner(board)) {
+//                    return String.valueOf(getFinalScore(board, n));
+//                }
+//
+//            }
+//
+//        }
+
+
+        return null;
     }
 
     @Override
