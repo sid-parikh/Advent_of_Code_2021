@@ -11,12 +11,12 @@ public class TestSolutions {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-//        System.out.println(new Day01().getSolution());
-//        System.out.println(new Day02().getSolution());
-//        System.out.println(new Day03().getSolution());
-//        System.out.println(new Day04().getSolution());
-//        System.out.println(new Day05().getSolution());
-//        System.out.println(new Day06().getSolution());
+        System.out.println(new Day01().getSolution());
+        System.out.println(new Day02().getSolution());
+        System.out.println(new Day03().getSolution());
+        System.out.println(new Day04().getSolution());
+        System.out.println(new Day05().getSolution());
+        System.out.println(new Day06().getSolution());
         System.out.println(new Day07().getSolution());
 
     }
