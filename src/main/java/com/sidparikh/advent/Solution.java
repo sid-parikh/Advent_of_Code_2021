@@ -36,6 +36,7 @@ public abstract class Solution {
      * Gets the input from the file's location. Now with relative filepaths and a real resources folder.
      *
      * @throws NullPointerException from {@link Objects#requireNonNull(Object)} if input file is not found
+     * @return the puzzle input as a list of rows
      */
     private List<String> getInput() throws NullPointerException {
         // For some reason, even though there are provided methods to get a resource as a file, it would never find
