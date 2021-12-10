@@ -18,8 +18,10 @@ public class TestSolutions {
 //        System.out.println(new Day05().getSolution());
 //        System.out.println(new Day06().getSolution());
 //        System.out.println(new Day07().getSolution());
+//        System.out.println(new Day08().getSolution());
+//        System.out.println(new Day09().getSolution());
 
-        System.out.println(new Day09().getSolution());
+        System.out.println(new Day10().getSolution());
 
     }
 
