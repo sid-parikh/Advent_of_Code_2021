@@ -60,20 +60,20 @@ public abstract class Solution {
      */
     public String getSolution() {
         // Temps
-        long start;
-        long elapsed;
+        double start;
+        double elapsed;
 
         // Run and time part one
-        start = System.currentTimeMillis();
+        start = System.nanoTime();
         String resOne = partOne();
-        elapsed = System.currentTimeMillis() - start;
-        resOne += String.format(" (%d ms)", elapsed);
+        elapsed = System.nanoTime() - start;
+        resOne += String.format(" (%.4f ms)", elapsed / 1_000_000.0);
 
         // Run and time part two
-        start = System.currentTimeMillis();
+        start = System.nanoTime();
         String resTwo = partTwo();
-        elapsed = System.currentTimeMillis() - start;
-        resTwo += String.format(" (%d ms)", elapsed);
+        elapsed = System.nanoTime() - start;
+        resTwo += String.format(" (%.4f ms)", elapsed / 1_000_000.0);
 
         return String.format("\n\n---Day %02d---\nStar 1: %s\nStar 2: %s", DAY, resOne, resTwo);
     }
