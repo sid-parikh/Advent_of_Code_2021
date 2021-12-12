@@ -2,6 +2,7 @@
 package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
+import com.sidparikh.advent.Utils.Loc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,6 +67,7 @@ public class Day09 extends Solution {
 
     /**
      * Finds the locations of low points in the puzzle input.
+     *
      * @return the number of low points
      */
     @Override
@@ -114,6 +116,7 @@ public class Day09 extends Solution {
 
     /**
      * Calculates the size of each basin.
+     *
      * @return the product of the sizes of the three largest basins.
      */
     @Override
@@ -134,9 +137,4 @@ public class Day09 extends Solution {
         return String.valueOf(total);
     }
 
-    /**
-     * Stores a pair of coordinates.
-     */
-    private record Loc(int x, int y) {
-    }
 }

@@ -22,7 +22,7 @@ public class TestSolutions {
 //        System.out.println(new Day09().getSolution());
 //        System.out.println(new Day10().getSolution());
 
-        System.out.println(new Day11().getSolution());
+        System.out.println(new Day12().getSolution());
 
 
 

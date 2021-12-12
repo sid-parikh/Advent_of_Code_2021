@@ -2,6 +2,8 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import com.sidparikh.advent.Utils.Loc;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,18 +47,6 @@ public class Day11 extends Solution {
         }
 
         return String.valueOf(answer);
-    }
-    private record Loc(int x, int y) {
-    }
-
-    private static void printArr(int[][] arr) {
-        for (int[] row : arr) {
-            for (int n : row) {
-                System.out.print(n);
-            }
-            System.out.println();
-        }
-        System.out.println();
     }
 
     private int flash(int[][] map, int x, int y) {
