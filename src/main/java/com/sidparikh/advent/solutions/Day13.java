@@ -163,13 +163,14 @@ public class Day13 extends Solution {
 //            }
 //        }
 
+        StringBuilder sb = new StringBuilder("\n");
         for (i = 0; i < dots[0].length; i++) {
             for (int j = 0; j < dots.length; j++) {
-                System.out.print(dots[j][i] ? '#' : '.');
+                sb.append(dots[j][i] ? '#' : '.');
             }
-            System.out.println();
+            sb.append("\n");
         }
 
-        return String.valueOf(count);
+        return sb.toString();
     }
 }
