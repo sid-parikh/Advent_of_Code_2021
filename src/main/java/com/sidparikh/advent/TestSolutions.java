@@ -23,8 +23,10 @@ public class TestSolutions {
 //        System.out.println(new Day10().getSolution());
 //        System.out.println(new Day11().getSolution());
 //        System.out.println(new Day12().getSolution());
+//        System.out.println(new Day13().getSolution());
 
-        System.out.println(new Day13().getSolution());
+//        System.out.println(new Day14().getSolution());
+        System.out.println(new Day14_Attempt2().getSolution());
 
     }
 
