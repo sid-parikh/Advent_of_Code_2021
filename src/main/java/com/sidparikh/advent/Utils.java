@@ -4,7 +4,7 @@ public class Utils {
 
     public record Loc(int x, int y) {}
 
-    public void print2dArray(int[][] arr) {
+    public static void print2dArray(int[][] arr) {
         for (int[] row : arr) {
             for (int n : row) {
                 System.out.print(n);
@@ -14,7 +14,7 @@ public class Utils {
         System.out.println();
     }
 
-    public void print2dArray(long[][] arr) {
+    public static void print2dArray(long[][] arr) {
         for (long[] row : arr) {
             for (long n : row) {
                 System.out.print(n);
@@ -24,7 +24,7 @@ public class Utils {
         System.out.println();
     }
 
-    public void print2dArray(char[][] arr) {
+    public static void print2dArray(char[][] arr) {
         for (char[] row : arr) {
             for (char c : row) {
                 System.out.print(c);
@@ -34,7 +34,7 @@ public class Utils {
         System.out.println();
     }
 
-    public void print2dArray(Object[][] arr) {
+    public static void print2dArray(Object[][] arr) {
         for (Object[] row : arr) {
             for (Object o : row) {
                 System.out.print(o);
