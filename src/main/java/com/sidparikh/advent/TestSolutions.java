@@ -27,7 +27,9 @@ public class TestSolutions {
 
 //        System.out.println(new Day14().getSolution());
 //        System.out.println(new Day14_Attempt2().getSolution());
-        System.out.println(new Day15().getSolution());
+//        System.out.println(new Day15().getSolution());
+
+        System.out.println(new Day16().getSolution());
 
     }
 
