@@ -1,0 +1,4 @@
+# Exclude JavaDoc from Linguist because this really isn't a web project :/
+*.html linguist-detectable=false
+*.js linguist-detectable=false
+*.css linguist-detectable=false
