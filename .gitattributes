@@ -1,2 +1,2 @@
-# Exclude JavaDoc from Linguist because this really isn't a web project :/
+# Exclude JavaDoc from Linguist 
 JavaDoc/ linguist-generated
