@@ -23,20 +23,14 @@ public abstract class Solution {
 
     public Solution(int day) {
         this.DAY = day;
-        try {
-            input = getInput();
-        } catch (NullPointerException e) {
-            // An expensive way to add an error message, but this should really never happen.
-            System.err.println("Input File not Found!");
-            throw e;
-        }
+        input = getInput();
     }
 
     /**
      * Gets the input from the file's location. Now with relative filepaths and a real resources folder.
      *
-     * @throws NullPointerException from {@link Objects#requireNonNull(Object)} if input file is not found
      * @return the puzzle input as a list of rows
+     * @throws NullPointerException from {@link Objects#requireNonNull(Object)} if input file is not found
      */
     private List<String> getInput() throws NullPointerException {
         // For some reason, even though there are provided methods to get a resource as a file, it would never find
@@ -44,7 +38,8 @@ public abstract class Solution {
         // FileNotFoundException and reverts it to an NPE, which is far less useful. I had to throw and catch it to add
         // an error message explaining it is probably because the input file is not found.
         String filepath = "inputs/day" + String.format("%02d", DAY) + ".txt";
-        Scanner scanner = new Scanner(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filepath)));
+        Scanner scanner = new Scanner(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filepath),
+                "Input File not Found!"));
 
         List<String> input = new ArrayList<>();
 
@@ -80,12 +75,14 @@ public abstract class Solution {
 
     /**
      * Solves part one of the day's puzzle.
+     *
      * @return the answer as a String (so it doesn't have to be either int or long)
      */
     public abstract String partOne();
 
     /**
      * Solves part two of the day's puzzle.
+     *
      * @return the answer as a String (so it doesn't have to be either int or long)
      */
     public abstract String partTwo();
