@@ -35,7 +35,7 @@ public class Day13 extends Solution {
         dots = newArr;
         String firstFold = input.get(i + 1);
         firstFold = firstFold.substring(11);
-        boolean isX = firstFold.charAt(0) == 'x';
+        // boolean isX = firstFold.charAt(0) == 'x';
         int val = Integer.parseInt(firstFold.substring(2));
 
         dots = foldX(dots, val);
@@ -143,14 +143,6 @@ public class Day13 extends Solution {
             }
 
         }
-
-
-        int count = 0;
-//        for (i = 0; i <= maxX; i++) {
-//            for (int j = 0; j <= maxY; j++) {
-//                count += dots[i][j] ? 1 : 0;
-//            }
-//        }
 
         StringBuilder sb = new StringBuilder("\n");
         for (i = 0; i < dots[0].length; i++) {

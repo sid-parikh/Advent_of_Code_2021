@@ -2,6 +2,7 @@ package com.sidparikh.advent;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Utils {
 
     public static void print2dArray(int[][] arr) {
