@@ -4,9 +4,7 @@ package com.sidparikh.advent.solutions;
 import com.sidparikh.advent.Solution;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Day 6: Lanternfish
@@ -23,6 +21,7 @@ public class Day06 extends Solution {
     /**
      * Simulates a single day, given an array of longs where the index is the value (days remaining in cycle) of a fish
      * and the value is the number of fish with that value.
+     *
      * @param fishArray array where index represents days left and value represents number of fish
      * @return a new array representing the state of fish at the end of the day
      */
@@ -43,6 +42,7 @@ public class Day06 extends Solution {
 
     /**
      * Parses the input (a list of values representing fish) and calls {@link #simulateDay(long[])} repeatedly.
+     *
      * @param numDays the number of days to simulate
      * @return the total number of fish at the end of {@code numDays} days.
      */
@@ -69,6 +69,7 @@ public class Day06 extends Solution {
 
     /**
      * Simulates 80 days
+     *
      * @return the number of fish after 80 days (360610)
      */
     @Override
@@ -78,6 +79,7 @@ public class Day06 extends Solution {
 
     /**
      * Simulates 256 days
+     *
      * @return the number of fish after 256 days (1631629590423)
      */
     @Override

@@ -19,6 +19,7 @@ public class Day05 extends Solution {
 
     /**
      * Counts the number of overlaps of horizontal and vertical lines.
+     *
      * @return the number of grid squares that two or more lines go through (7468)
      */
     @Override
@@ -36,7 +37,7 @@ public class Day05 extends Solution {
                 for (int y = Math.min(line.y1(), line.y2()); y <= Math.max(line.y1(), line.y2()); y++) {
                     grid[line.x1()][y]++;
                 }
-            // Vertical lines
+                // Vertical lines
             } else if (line.y1() == line.y2()) {
                 // Can go in either direction; max and min simplifies the logic
                 for (int x = Math.min(line.x1(), line.x2()); x <= Math.max(line.x1(), line.x2()); x++) {
@@ -60,6 +61,7 @@ public class Day05 extends Solution {
 
     /**
      * Counts the number of overlaps of all lines.
+     *
      * @return the number of grid squares that two or more lines go through (22364)
      */
     @Override
@@ -123,6 +125,7 @@ public class Day05 extends Solution {
     public record Line(int x1, int y1, int x2, int y2) {
         /**
          * Helper method that parses input in the form given into a Line
+         *
          * @param input a line in the form "x1, y1, -> x2, y2"
          * @return a Line with the corresponding values
          */
@@ -130,7 +133,8 @@ public class Day05 extends Solution {
             String[] temp = input.split(" -> ");
             String[] firstPt = temp[0].split(",");
             String[] secondPt = temp[1].split(",");
-            return new Line(Integer.parseInt(firstPt[0]), Integer.parseInt(firstPt[1]), Integer.parseInt(secondPt[0]), Integer.parseInt(secondPt[1]));
+            return new Line(Integer.parseInt(firstPt[0]), Integer.parseInt(firstPt[1]), Integer.parseInt(secondPt[0]),
+                    Integer.parseInt(secondPt[1]));
         }
     }
 }

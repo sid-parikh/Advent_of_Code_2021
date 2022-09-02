@@ -1,8 +1,8 @@
 package com.sidparikh.advent;
 
-public class Utils {
+import java.util.List;
 
-    public record Loc(int x, int y) {}
+public class Utils {
 
     public static void print2dArray(int[][] arr) {
         for (int[] row : arr) {
@@ -43,5 +43,18 @@ public class Utils {
         }
         System.out.println();
     }
+
+    public static void printList(List<?> list, String separator) {
+        for (Object o : list) {
+            System.out.print(o);
+            System.out.print(separator);
+        }
+    }
+
+    public static void printList(List<?> list) {
+        printList(list, "\n");
+    }
+
+    public record Loc(int x, int y) {}
 
 }

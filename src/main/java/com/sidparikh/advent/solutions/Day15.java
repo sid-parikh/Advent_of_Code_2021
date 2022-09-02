@@ -46,11 +46,15 @@ public class Day15 extends Solution {
 
         while (visited.size() != size) {
 
-            if (unvisited.isEmpty()) return;
+            if (unvisited.isEmpty()) {
+                return;
+            }
 
             Node currentNode = unvisited.poll();
 
-            if (visited.contains(currentNode)) continue;
+            if (visited.contains(currentNode)) {
+                continue;
+            }
 
             for (Node adjacentNode : currentNode.adjacentNodes) {
                 if (!visited.contains(adjacentNode)) {
@@ -84,9 +88,7 @@ public class Day15 extends Solution {
 
         // Zero
         for (int i = 0; i < LEN; i++) {
-            for (int j = 0; j < LEN; j++) {
-                newMap[i][j] = map[i][j];
-            }
+            System.arraycopy(map[i], 0, newMap[i], 0, LEN);
         }
 
         // One
@@ -166,15 +168,18 @@ public class Day15 extends Solution {
 
     /**
      * Increments a number part two style
-     * @param start starting number
+     *
+     * @param start  starting number
      * @param amount amount to increase by
      * @return new number
      */
     public static int increment(int start, int amount) {
         while (amount > 0) {
-            start ++;
+            start++;
             amount--;
-            if (start == 10) start = 1;
+            if (start == 10) {
+                start = 1;
+            }
         }
         return start;
     }
@@ -192,10 +197,18 @@ public class Day15 extends Solution {
         for (int i = 0; i < nodeMap.length; i++) {
             for (int j = 0; j < nodeMap[0].length; j++) {
 
-                if (i > 0) nodeMap[i][j].adjacentNodes.add(nodeMap[i - 1][j]);
-                if (i + 1 < nodeMap.length) nodeMap[i][j].adjacentNodes.add(nodeMap[i + 1][j]);
-                if (j > 0) nodeMap[i][j].adjacentNodes.add(nodeMap[i][j - 1]);
-                if (j + 1 < nodeMap.length) nodeMap[i][j].adjacentNodes.add(nodeMap[i][j + 1]);
+                if (i > 0) {
+                    nodeMap[i][j].adjacentNodes.add(nodeMap[i - 1][j]);
+                }
+                if (i + 1 < nodeMap.length) {
+                    nodeMap[i][j].adjacentNodes.add(nodeMap[i + 1][j]);
+                }
+                if (j > 0) {
+                    nodeMap[i][j].adjacentNodes.add(nodeMap[i][j - 1]);
+                }
+                if (j + 1 < nodeMap.length) {
+                    nodeMap[i][j].adjacentNodes.add(nodeMap[i][j + 1]);
+                }
 
             }
         }
@@ -231,7 +244,6 @@ public class Day15 extends Solution {
 
         return solveMaze(map);
     }
-
 
 
 }

@@ -19,7 +19,7 @@ public class Day18 extends Solution {
         test = test.reduce(0);
 
         System.out.println(test);
-       // String test = ;
+        // String test = ;
 
         // reduce(test.toCharArray());
 
@@ -139,7 +139,7 @@ public class Day18 extends Solution {
                     boolean found = false;
                     while (p != null) {
                         p = p.yPair;
-                        if (p instanceof Value ) {
+                        if (p instanceof Value) {
                             ((Value) p).val += ((Value) yPair).val;
                             found = true;
                             break;
@@ -158,7 +158,7 @@ public class Day18 extends Solution {
                     }
                     while (p != null) {
                         p = p.xPair;
-                        if (p instanceof Value ) {
+                        if (p instanceof Value) {
                             ((Value) p).val += ((Value) xPair).val;
                             break;
                         } else {
@@ -188,7 +188,6 @@ public class Day18 extends Solution {
             return null;
         }
     }
-
 
 
     // Certainly a very strange way to do this

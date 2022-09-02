@@ -42,7 +42,9 @@ public class Day09 extends Solution {
      */
     private static int calcSize(int i, int j, int[][] map) {
 
-        if (map[i][j] == 9) return 0;
+        if (map[i][j] == 9) {
+            return 0;
+        }
 
         // We have a non-9
         // set to 9 to mark as counted

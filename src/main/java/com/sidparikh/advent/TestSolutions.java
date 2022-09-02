@@ -2,7 +2,6 @@ package com.sidparikh.advent;
 
 import com.sidparikh.advent.solutions.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**

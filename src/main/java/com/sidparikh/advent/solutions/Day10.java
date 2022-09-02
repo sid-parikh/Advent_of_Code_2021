@@ -110,7 +110,9 @@ public class Day10 extends Solution {
                 }
 
             }
-            if (corrupt || opens.size() == 0) continue;
+            if (corrupt || opens.size() == 0) {
+                continue;
+            }
             long score = 0;
             while (opens.size() > 0) {
                 score *= 5;

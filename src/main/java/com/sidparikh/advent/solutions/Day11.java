@@ -1,7 +1,6 @@
 package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
-
 import com.sidparikh.advent.Utils.Loc;
 
 import java.io.IOException;

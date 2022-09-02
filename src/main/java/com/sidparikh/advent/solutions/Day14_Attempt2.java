@@ -84,7 +84,7 @@ public class Day14_Attempt2 extends Solution {
         long highest = 0;
         long lowest = Long.MAX_VALUE;
 
-        for (Map.Entry<Character, Long> e: charFreqs.entrySet()) {
+        for (Map.Entry<Character, Long> e : charFreqs.entrySet()) {
             // System.out.println(e);
             highest = Math.max(highest, e.getValue());
             lowest = Math.min(lowest, e.getValue());

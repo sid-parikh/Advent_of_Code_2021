@@ -8,14 +8,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class Day17 extends Solution {
-    int totalY = 0;
-    int totalX = 0;
+
     public Day17() throws IOException {
         super(17);
     }
 
     @Override
     public String partOne() {
+        int totalY = 0;
 
         List<String[]> allPairs = input.stream().map((s) -> s.split("\\s+")).toList();
         List<String> pairsBetter = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Day17 extends Solution {
 
         List<Integer> ref;
         for (int i = -1000; i < 1000; i++) {
-            ref = allYPos(i, new ArrayList<Integer>(), 0);
+            ref = allYPos(i, new ArrayList<>(), 0);
             int j = ref.size() - 1;
             for (; j >= 0; j--) {
                 if (ref.get(j) >= -260 && ref.get(j) <= -200) {
@@ -51,29 +51,12 @@ public class Day17 extends Solution {
         return allYPos(vy, pos, y);
     }
 
-    private List<Integer> allXPos(int vx, List<Integer> pos, int x) {
-        x += vx;
-        pos.add(x);
-        if (vx > 0) vx--;
-        else if (vx < 0) vx++;
-        if (x > 67) {
-            return pos;
-        }
-        return allXPos(vx, pos, x);
-    }
-
     private void printList(List<?> list) {
         for (Object o : list) {
             System.out.print(o + " ");
         }
-        System.out.println("");
+        System.out.println();
     }
-
-    private int sumRange(int a, int b) {
-        return (b - a + 1) * (b + a) / 2;
-    }
-
-
 
     @Override
     public String partTwo() {
@@ -117,7 +100,9 @@ public class Day17 extends Solution {
                         break;
                     }
 
-                    if (vx > 0) vx--;
+                    if (vx > 0) {
+                        vx--;
+                    }
                     vy--;
                 }
             }

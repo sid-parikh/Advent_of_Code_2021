@@ -50,7 +50,9 @@ public class Day04 extends Solution {
         int sum = 0;
         for (int[] row : board) {
             for (int n : row) {
-                if (n != MARK) sum += n;
+                if (n != MARK) {
+                    sum += n;
+                }
             }
         }
         return lastNum * sum;
@@ -101,7 +103,10 @@ public class Day04 extends Solution {
     private void createBingoBoards() {
         // nums shouldn't and can't be recreated
         if (nums == null) {
-            nums = Arrays.stream(input.remove(0).split(",")).filter((s) -> !s.isEmpty()).mapToInt(Integer::parseInt).toArray();
+            nums = Arrays.stream(input.remove(0).split(","))
+                         .filter((s) -> !s.isEmpty())
+                         .mapToInt(Integer::parseInt)
+                         .toArray();
         }
 
         // Parse input to initialize boards. This should happen before part one and part two, to reset the marking.
@@ -117,9 +122,9 @@ public class Day04 extends Solution {
             } else {
                 // Update the last board for normal rows
                 boards.get(boards.size() - 1)[i] = Arrays.stream(s.split(" "))
-                        .filter((a) -> !a.isEmpty())
-                        .mapToInt(Integer::parseInt)
-                        .toArray();
+                                                         .filter((a) -> !a.isEmpty())
+                                                         .mapToInt(Integer::parseInt)
+                                                         .toArray();
                 i++;
             }
         }

@@ -91,7 +91,9 @@ public class Day07 extends Solution {
 
         for (int n = min + 1; n <= max; n++) {
             long sum = calculateFuelTwo(nums, n);
-            if (sum < smallestSum) smallestSum = sum;
+            if (sum < smallestSum) {
+                smallestSum = sum;
+            }
         }
 
         return String.valueOf(smallestSum);

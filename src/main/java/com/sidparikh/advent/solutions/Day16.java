@@ -125,25 +125,25 @@ public class Day16 extends Solution {
 
         switch (id) {
             case 0 ->
-                    // Sum Packet
+                // Sum Packet
                     val = subPackets.stream().mapToLong(Packet::value).sum();
             case 1 ->
-                    // Product Packet
+                // Product Packet
                     val = subPackets.stream().mapToLong(Packet::value).reduce((a, b) -> a * b).orElse(1);
             case 2 ->
-                    // Minimum Packet
+                // Minimum Packet
                     val = subPackets.stream().mapToLong(Packet::value).min().orElseThrow();
             case 3 ->
-                    // Maximum Packet
+                // Maximum Packet
                     val = subPackets.stream().mapToLong(Packet::value).max().orElseThrow();
             case 5 ->
-                    // Greater Than Packet
+                // Greater Than Packet
                     val = subPackets.get(0).value() > subPackets.get(1).value() ? 1 : 0;
             case 6 ->
-                    // Less Than Packet
+                // Less Than Packet
                     val = subPackets.get(0).value() < subPackets.get(1).value() ? 1 : 0;
             case 7 ->
-                    // Equal To Packet
+                // Equal To Packet
                     val = subPackets.get(0).value() == subPackets.get(1).value() ? 1 : 0;
         }
 
@@ -189,7 +189,8 @@ public class Day16 extends Solution {
 
     @Override
     public String partTwo() {
-        return String.valueOf(Objects.requireNonNull(getNextSubPacket(binPacket), "Something very bad has happened.").value());
+        return String.valueOf(
+                Objects.requireNonNull(getNextSubPacket(binPacket), "Something very bad has happened.").value());
     }
 
     public record Packet(long value, int length) {}

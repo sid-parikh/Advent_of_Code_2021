@@ -19,7 +19,7 @@ public class Day03 extends Solution {
      * LENGTH keeps track of the length of the rows in the input so I can easily switch between example input (5) and my
      * puzzle input (12).
      */
-    private final int LENGTH ;
+    private final int LENGTH;
 
     public Day03() throws IOException {
         super(3);
@@ -49,7 +49,9 @@ public class Day03 extends Solution {
         int[] epsilon = new int[LENGTH];
         for (boolean[] row : binary) {
             for (int j = 0; j < binary[0].length; j++) {
-                if (row[j]) countOnes[j]++;
+                if (row[j]) {
+                    countOnes[j]++;
+                }
             }
         }
         // If there are more ones than half the number of rows, then 1 is the most common bit.
@@ -68,10 +70,14 @@ public class Day03 extends Solution {
 
         // Convert the int[]s of 0s and 1s to actual numbers.
         StringBuilder sb = new StringBuilder();
-        for (int c : countOnes) sb.append(c);
+        for (int c : countOnes) {
+            sb.append(c);
+        }
 
         StringBuilder sb2 = new StringBuilder();
-        for (int c : epsilon) sb2.append(c);
+        for (int c : epsilon) {
+            sb2.append(c);
+        }
 
         int delta = Integer.parseInt(sb.toString(), 2);
         int epsilonF = Integer.parseInt(sb2.toString(), 2);
@@ -113,7 +119,9 @@ public class Day03 extends Solution {
             // efficient, this should be better than the 2D array solution from part one, but that is just a guess.
             // (n & 1) returns the last digit of the binary representation of an integer n.
             for (int n : oxy) {
-                if (((n >> (LENGTH - 1) - i) & 1) == 1) co++;
+                if (((n >> (LENGTH - 1) - i) & 1) == 1) {
+                    co++;
+                }
             }
             // Compare the number of ones to half the current size of the list.
             final double l = (double) oxy.size() / 2;
@@ -136,7 +144,9 @@ public class Day03 extends Solution {
         while (co2.size() > 1 && i < LENGTH) {
             int co = 0;
             for (int n : co2) {
-                if (((n >> (LENGTH - 1) - i) & 1) == 1) co++;
+                if (((n >> (LENGTH - 1) - i) & 1) == 1) {
+                    co++;
+                }
             }
             final double l = (double) co2.size() / 2;
             final int finalI = i;

@@ -16,7 +16,7 @@ public class Day12 extends Solution {
      * Recursively finds all paths from a given starting cave to the cave with the name "end." Part One version where each cave can
      * only be visited once.
      *
-     * @param start the cave to start searching from
+     * @param start     the cave to start searching from
      * @param pathSoFar the caves that have been visited on this path already
      * @return the number of legal paths from {@code start} to the {@link Cave} with the name "end"
      */
@@ -39,13 +39,14 @@ public class Day12 extends Solution {
 
         return a;
     }
+
     /**
      * Recursively finds all paths from a given starting cave to the cave with the name "end." Part Two version
      * where once a path you may visit a small cave twice.
      *
-     * @param start the cave to start searching from
+     * @param start     the cave to start searching from
      * @param pathSoFar the caves that have been visited on this path already
-     * @param burned whether this path has "burned" its once-a-path special visit
+     * @param burned    whether this path has "burned" its once-a-path special visit
      * @return the number of legal paths from {@code start} to the {@link Cave} with the name "end"
      */
     private static int findPathsToEndTwo(Cave start, List<Cave> pathSoFar, boolean burned) {

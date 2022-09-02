@@ -3,7 +3,8 @@ package com.sidparikh.advent.solutions;
 import com.sidparikh.advent.Solution;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Day14 extends Solution {
@@ -11,7 +12,7 @@ public class Day14 extends Solution {
         super(14);
     }
 
-    private record CharPair(Character first, Character second){
+    private record CharPair(Character first, Character second) {
         @Override
         public String toString() {
             return String.format("%c%c", first, second);
@@ -24,7 +25,8 @@ public class Day14 extends Solution {
         public static class Node {
             public char data;
             public Node next;
-            protected Node (char data) {
+
+            protected Node(char data) {
                 this.data = data;
                 next = null;
             }
@@ -78,7 +80,7 @@ public class Day14 extends Solution {
         int highest = 0;
         int lowest = Integer.MAX_VALUE;
 
-        for (Map.Entry<Character, Integer> e: counts.entrySet()) {
+        for (Map.Entry<Character, Integer> e : counts.entrySet()) {
             highest = Math.max(e.getValue(), highest);
             lowest = Math.min(e.getValue(), lowest);
         }
@@ -147,7 +149,7 @@ public class Day14 extends Solution {
         long highest = 0;
         long lowest = Integer.MAX_VALUE;
 
-        for (Map.Entry<Character, Long> e: charFreqs.entrySet()) {
+        for (Map.Entry<Character, Long> e : charFreqs.entrySet()) {
             // System.out.println(e);
             highest = Math.max(highest, e.getValue());
             lowest = Math.min(lowest, e.getValue());

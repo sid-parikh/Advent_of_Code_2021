@@ -1,12 +1,8 @@
 package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
-import com.sidparikh.advent.Utils.Loc;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 
 public class Day13 extends Solution {
 
@@ -34,9 +30,7 @@ public class Day13 extends Solution {
         }
         boolean[][] newArr = new boolean[maxX + 1][maxY + 1];
         for (int r = 0; r <= maxX; r++) {
-            for (int c = 0; c <= maxY; c++) {
-                newArr[r][c] = dots[r][c];
-            }
+            System.arraycopy(dots[r], 0, newArr[r], 0, maxY + 1);
         }
         dots = newArr;
         String firstFold = input.get(i + 1);
@@ -67,9 +61,7 @@ public class Day13 extends Solution {
                 }
             }
             for (int i = 0; i <= (2 * val) - dots.length; i++) {
-                for (int j = 0; j < L; j++) {
-                    answer[i][j] = dots[i][j];
-                }
+                System.arraycopy(dots[i], 0, answer[i], 0, L);
             }
         } else {
             answer = new boolean[dots.length - val - 1][L];
@@ -82,7 +74,6 @@ public class Day13 extends Solution {
         }
         return answer;
     }
-
 
 
     private static boolean[][] foldY(boolean[][] dots, int val) {
@@ -98,9 +89,8 @@ public class Day13 extends Solution {
             }
 
             for (int i = 0; i < L; i++) {
-                for (int j = 0; j <= (2 * val) - dots[0].length; j++) {
-                    answer[i][j] = dots[i][j];
-                }
+                if ((2 * val) - dots[0].length + 1 >= 0)
+                    System.arraycopy(dots[i], 0, answer[i], 0, (2 * val) - dots[0].length + 1);
             }
         } else {
             answer = new boolean[L][dots[0].length - val];
@@ -137,9 +127,7 @@ public class Day13 extends Solution {
         }
         boolean[][] newArr = new boolean[maxX + 1][maxY + 1];
         for (int r = 0; r <= maxX; r++) {
-            for (int c = 0; c <= maxY; c++) {
-                newArr[r][c] = dots[r][c];
-            }
+            System.arraycopy(dots[r], 0, newArr[r], 0, maxY + 1);
         }
         dots = newArr;
         for (i = i + 1; i < input.size(); i++) {
@@ -166,8 +154,8 @@ public class Day13 extends Solution {
 
         StringBuilder sb = new StringBuilder("\n");
         for (i = 0; i < dots[0].length; i++) {
-            for (int j = 0; j < dots.length; j++) {
-                sb.append(dots[j][i] ? '#' : '.');
+            for (boolean[] dot : dots) {
+                sb.append(dot[i] ? '#' : '.');
             }
             sb.append("\n");
         }

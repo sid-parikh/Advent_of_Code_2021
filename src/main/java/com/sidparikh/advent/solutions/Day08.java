@@ -46,19 +46,33 @@ public class Day08 extends Solution {
 
         final int l = digit.length();
 
-        if (l == 2) return 1;
-        if (l == 4) return 4;
-        if (l == 3) return 7;
-        if (l == 7) return 8;
+        if (l == 2) {
+            return 1;
+        }
+        if (l == 4) {
+            return 4;
+        }
+        if (l == 3) {
+            return 7;
+        }
+        if (l == 7) {
+            return 8;
+        }
 
         if (l == 5) {
 
             if (digit.contains(String.valueOf(key.get('g')))) {
                 final boolean c = digit.contains(String.valueOf(key.get('c')));
                 final boolean f = digit.contains(String.valueOf(key.get('f')));
-                if (c && f) return 3;
-                if (c) return 2;
-                if (f) return 5;
+                if (c && f) {
+                    return 3;
+                }
+                if (c) {
+                    return 2;
+                }
+                if (f) {
+                    return 5;
+                }
             }
 
         }
