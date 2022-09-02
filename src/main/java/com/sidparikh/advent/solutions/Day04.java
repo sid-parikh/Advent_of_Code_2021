@@ -3,6 +3,7 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -33,7 +34,7 @@ public class Day04 extends Solution {
      */
     private int[] nums = null;
 
-    public Day04() {
+    public Day04() throws IOException {
         super(4);
     }
 

@@ -3,6 +3,8 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
+
 
 /**
  * Day 1: Sonar Sweep
@@ -16,7 +18,7 @@ import com.sidparikh.advent.Solution;
 
 public class Day01 extends Solution {
 
-    public Day01() {
+    public Day01() throws IOException {
         super(1);
     }
 

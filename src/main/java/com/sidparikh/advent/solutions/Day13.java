@@ -3,13 +3,14 @@ package com.sidparikh.advent.solutions;
 import com.sidparikh.advent.Solution;
 import com.sidparikh.advent.Utils.Loc;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
 public class Day13 extends Solution {
 
-    public Day13() {
+    public Day13() throws IOException {
         super(13);
     }
 

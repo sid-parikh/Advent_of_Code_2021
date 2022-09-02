@@ -2,12 +2,13 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class Day12 extends Solution {
-    public Day12() {
+    public Day12() throws IOException {
         super(12);
     }
 

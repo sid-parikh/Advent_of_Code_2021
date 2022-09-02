@@ -3,6 +3,7 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -10,7 +11,7 @@ import java.util.Objects;
 public class Day16 extends Solution {
     String binPacket;
 
-    public Day16() {
+    public Day16() throws IOException {
         super(16);
         setup();
     }

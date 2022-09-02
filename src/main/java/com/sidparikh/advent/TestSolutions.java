@@ -3,13 +3,14 @@ package com.sidparikh.advent;
 import com.sidparikh.advent.solutions.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * This class serves as a Main class and runs each day's {@link Solution}.
  */
 public class TestSolutions {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
 
 //        System.out.println(new Day01().getSolution());
 //        System.out.println(new Day02().getSolution());
@@ -30,7 +31,7 @@ public class TestSolutions {
 //        System.out.println(new Day15().getSolution());
 
 //        System.out.println(new Day16().getSolution());
-        System.out.println(new Day18().getSolution());
+        System.out.println(new Day17().getSolution());
 
     }
 

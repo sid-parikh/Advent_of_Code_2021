@@ -3,6 +3,7 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  * Star Two: Calculate the number of fish after 256 days.
  */
 public class Day06 extends Solution {
-    public Day06() {
+    public Day06() throws IOException {
         super(6);
     }
 

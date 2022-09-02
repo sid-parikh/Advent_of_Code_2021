@@ -3,6 +3,7 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.Map;
 public class Day08 extends Solution {
     private final List<NotebookEntry> entryList = new ArrayList<>();
 
-    public Day08() {
+    public Day08() throws IOException {
         super(8);
     }
 

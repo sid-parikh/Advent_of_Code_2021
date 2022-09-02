@@ -2,11 +2,12 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.*;
 
 
 public class Day14 extends Solution {
-    public Day14() {
+    public Day14() throws IOException {
         super(14);
     }
 

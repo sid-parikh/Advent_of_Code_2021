@@ -3,6 +3,7 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -20,7 +21,7 @@ public class Day03 extends Solution {
      */
     private final int LENGTH ;
 
-    public Day03() {
+    public Day03() throws IOException {
         super(3);
         LENGTH = input.get(0).length();
     }

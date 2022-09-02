@@ -3,6 +3,8 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
+
 /**
  * Day 2: Dive!
  * <p>
@@ -12,7 +14,7 @@ import com.sidparikh.advent.Solution;
  */
 public class Day02 extends Solution {
 
-    public Day02() {
+    public Day02() throws IOException {
         super(2);
     }
 

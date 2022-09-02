@@ -4,6 +4,7 @@ import com.sidparikh.advent.Solution;
 
 import com.sidparikh.advent.Utils.Loc;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Day11 extends Solution {
     private int[][] map;
 
-    public Day11() {
+    public Day11() throws IOException {
         super(11);
     }
 

@@ -3,6 +3,7 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,7 +21,7 @@ public class Day10 extends Solution {
     private int partOneAnswer;
     private long partTwoAnswer;
 
-    public Day10() {
+    public Day10() throws IOException {
         super(10);
         partOneAnswer = 0;
         partTwoAnswer = 0L;

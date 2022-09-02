@@ -1,5 +1,8 @@
 package com.sidparikh.advent;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +24,7 @@ public abstract class Solution {
      */
     private final int DAY;
 
-    public Solution(int day) {
+    public Solution(int day) throws IOException {
         this.DAY = day;
         input = getInput();
     }
@@ -32,22 +35,27 @@ public abstract class Solution {
      * @return the puzzle input as a list of rows
      * @throws NullPointerException from {@link Objects#requireNonNull(Object)} if input file is not found
      */
-    private List<String> getInput() throws NullPointerException {
+    private List<String> getInput() throws IOException {
         // For some reason, even though there are provided methods to get a resource as a file, it would never find
         // the file when I used those. Only getResourceAsStream worked. Unfortunately, getResourceAsStream hides the
         // FileNotFoundException and reverts it to an NPE, which is far less useful. I had to throw and catch it to add
         // an error message explaining it is probably because the input file is not found.
         String filepath = "inputs/day" + String.format("%02d", DAY) + ".txt";
-        Scanner scanner = new Scanner(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filepath),
-                "Input File not Found!"));
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream(filepath)) {
+            if (is == null) {
+                throw new FileNotFoundException("Cannot Find Input File!");
+            }
 
-        List<String> input = new ArrayList<>();
+            Scanner scanner = new Scanner(is);
 
-        while (scanner.hasNextLine()) {
-            input.add(scanner.nextLine());
+            List<String> input = new ArrayList<>();
+
+            while (scanner.hasNextLine()) {
+                input.add(scanner.nextLine());
+            }
+
+            return input;
         }
-
-        return input;
     }
 
     /**

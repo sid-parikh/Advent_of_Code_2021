@@ -3,6 +3,7 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Arrays;
  * Star Two: The calculation for fuel cost for n units is actually (1 + 2 + ... + n).
  */
 public class Day07 extends Solution {
-    public Day07() {
+    public Day07() throws IOException {
         super(7);
     }
 

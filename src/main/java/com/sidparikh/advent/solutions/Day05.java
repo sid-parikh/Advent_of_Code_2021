@@ -3,6 +3,8 @@ package com.sidparikh.advent.solutions;
 
 import com.sidparikh.advent.Solution;
 
+import java.io.IOException;
+
 /**
  * Day 5: Hydrothermal Venture
  * <p>
@@ -11,7 +13,7 @@ import com.sidparikh.advent.Solution;
  * Star Two: Include diagonal lines, too.
  */
 public class Day05 extends Solution {
-    public Day05() {
+    public Day05() throws IOException {
         super(5);
     }
 
